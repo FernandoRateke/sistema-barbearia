@@ -1,0 +1,73 @@
+header {
+  background-color: #2b2b2b;
+  color: #fff;
+  padding: 20px 30px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+h2 {
+  margin: 20px 0 12px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input,
+select {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #b8860b;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.mensagem {
+  margin-top: 12px;
+  color: #2b2b2b;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.login form {
+  flex-direction: column;
+  width: 300px;
+}

@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// funcionário que acessa o sistema
+model Usuario {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  email String @unique
+  senha String
+}
+
+model Cliente {
+  id       Int    @id @default(autoincrement())
+  nome     String
+  cpf      String @unique
+  telefone String
+
+  agendamentos Agendamento[]
+}
+
+model Barbeiro {
+  id       Int    @id @default(autoincrement())
+  nome     String
+  telefone String
+
+  agendamentos Agendamento[]
+}
+
+model Servico {
+  id      Int    @id @default(autoincrement())
+  nome    String
+  preco   Float
+  duracao Int // em minutos
+
+  agendamentos Agendamento[]
+}
+
+model Agendamento {
+  id       Int      @id @default(autoincrement())
+  dataHora DateTime
+  status   String   @default("AGENDADO")
+
+  clienteId  Int
+  barbeiroId Int
+  servicoId  Int
+
+  cliente  Cliente  @relation(fields: [clienteId], references: [id])
+  barbeiro Barbeiro @relation(fields: [barbeiroId], references: [id])
+  servico  Servico  @relation(fields: [servicoId], references: [id])
+}
